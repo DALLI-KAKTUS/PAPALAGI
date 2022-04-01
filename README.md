@@ -1,2 +1,2 @@
 # PAPALAGI
-An autonomous drone project 
+Yet anotherautonomous drone project 
