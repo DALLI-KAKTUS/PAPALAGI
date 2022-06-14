@@ -74,3 +74,15 @@ colcon build --symlink-install
 ```
 satırlarını
    `-gencode arch=compute_53,code=[sm_53,compute_53]` ile değiştir
+   
+    `apt-get install ros-foxy-v4l2-camera`
+ile v4l2 ros driverını kur
+
+### kendi datasetimizi kullanma
+`/home/jetson/kkts_ws/src/darknet_ros_yolov4/darknet_ros/darknet_ros/yolo_network_config` yolundaki weights ve cfg dosyalarını değiştir ve tüm workspace'deki data cart curt dosyalarını kendi isteğine göre ayarla
+## px4_ros_com paketini kendi workspace'imize uyarlama
+```bash
+cd <workspace yolu>/src
+git clone https://github.com/PX4/px4_ros_com.git 
+git clone https://github.com/PX4/px4_msgs.git
+```
