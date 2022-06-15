@@ -1,5 +1,5 @@
-#offboard başaltılamaması muhtemel sorun ve çözümü
-##failsafe enabled no input stick hatası
+# offboard başaltılamaması muhtemel sorun ve çözümü
+## failsafe enabled no input stick hatası
 qground içinde parametre düzenlemesi yapılması
 ```
 COM_RC_IN_MODE = 1
