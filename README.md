@@ -1,2 +1,2 @@
 # PAPALAGI
-Yet anotherautonomous drone project 
+Yet another autonomous drone project 
