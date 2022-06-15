@@ -93,7 +93,7 @@ source ~/kkts_ws/src/px4_ros_com/scripts/build_ros2_workspace.bash
 ###spiral çizme fonksiyonu
 [spiral.cpp ](hhttps://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/spiral.cppttp:// "spiral.cpp ") dosyası spiral çizdirmek için gerekli koordinatları cpp vector sözdizimine uygun bi şekilde consola yazdırır, bu çıktı [setpoint.cpp](https://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/setpoint.cpp "setpoint kodu") içindeki waypoints değişkenine atanmalıdır.
 #### spiralin tune edilmesi
-#####[spiral.cpp ](hhttps://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/spiral.cppttp:// "spiral.cpp ")nin içindeki değişkenler ve açıklamaları
+#####Tune için gerekli değişkenler ve açıklamaları
 **A**: yataydaki başlangıç noktası
 **B**: dikeydeki başlangıç noktası
 **angle**: iki veri arasında ilerlenen açı
