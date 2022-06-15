@@ -92,11 +92,34 @@ source ~/kkts_ws/src/px4_ros_com/scripts/build_ros2_workspace.bash
 
 ###spiral çizme fonksiyonu
 [spiral.cpp ](hhttps://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/spiral.cppttp:// "spiral.cpp ") dosyası spiral çizdirmek için gerekli koordinatları cpp vector sözdizimine uygun bi şekilde consola yazdırır, bu çıktı [setpoint.cpp](https://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/setpoint.cpp "setpoint kodu") içindeki waypoints değişkenine atanmalıdır.
-#### spiralin tune edilmesi
-##### Tune için gerekli değişkenler ve açıklamaları
+####spiralin tune edilmesi
+#####[spiral.cpp ](hhttps://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/spiral.cppttp:// "spiral.cpp ")nin içindeki değişkenler ve açıklamaları
 **A**: yataydaki başlangıç noktası
 **B**: dikeydeki başlangıç noktası
 **angle**: iki veri arasında ilerlenen açı
 **l**: vektörün uzunluğu, toplam nokta sayısı
 ### launch dosyasını uyarlama
-`/home/jetson/kkts_ws/src/darknet_ros_yolov4/darknet_ros/darknet_ros/launch/darknet_ros.launch.py` dosyasındaki
+`/home/jetson/kkts_ws/src/darknet_ros_yolov4/darknet_ros/darknet_ros/launch/darknet_ros.launch.py` dosyasındaki     `ld.add_action(declare_network_param_file_cmd)` satırının altına `ld.add_action(setpoint_berke)` satırını ekle, 
+
+```python
+darknet_ros_cmd = Node(
+      package='darknet_ros',
+      executable='darknet_ros',
+      name='darknet_ros',
+      output='screen',
+      parameters=[ros_param_file, network_param_file,
+        {
+          "config_path": yolo_config_path, 
+          "weights_path": yolo_weights_path,
+        },
+      ])
+```
+satırlarının altına 
+```python
+setpoint_berke = Node(
+      package='px4_ros_com',
+      executable='setpoint',
+      name='setpoint'
+      )
+```
+satırlarını ekle
