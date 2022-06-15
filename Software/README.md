@@ -89,5 +89,14 @@ source ~/kkts_ws/src/px4_ros_com/scripts/build_ros2_workspace.bash
 ```
 ### setpoint kodunun eklenmesi
 [setpoint.cpp](https://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/setpoint.cpp "setpoint kodu") dosyasını indirip `/home/jetson/kkts_ws/src/px4_ros_com/src/examples/offboard` klasörüne at. ardından `/home/jetson/kkts_ws/src/px4_ros_com/CMakeLists.txt` dosyasındaki ` custom_executable(examples/offboard offboard_control)`  satırının altına ` custom_executable(examples/offboard setpoint)`  satırını ekle
+
+###spiral çizme fonksiyonu
+[spiral.cpp ](hhttps://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/spiral.cppttp:// "spiral.cpp ") dosyası spiral çizdirmek için gerekli koordinatları cpp vector sözdizimine uygun bi şekilde consola yazdırır, bu çıktı [setpoint.cpp](https://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/setpoint.cpp "setpoint kodu") içindeki waypoints değişkenine atanmalıdır.
+####spiralin tune edilmesi
+#####[spiral.cpp ](hhttps://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/spiral.cppttp:// "spiral.cpp ")nin içindeki değişkenler ve açıklamaları
+**A**: yataydaki başlangıç noktası
+**B**: dikeydeki başlangıç noktası
+**angle**: iki veri arasında ilerlenen açı
+**l**: vektörün uzunluğu, toplam nokta sayısı
 ### launch dosyasını uyarlama
 `/home/jetson/kkts_ws/src/darknet_ros_yolov4/darknet_ros/darknet_ros/launch/darknet_ros.launch.py` dosyasındaki
