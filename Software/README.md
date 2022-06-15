@@ -1,7 +1,7 @@
 # **Proje için ROS2 Workspace hazırlanması**
 ## ROS2 kurulumu
 ### fastdds kurulumu
-foonathan_memory_vendor'u indir ve kaynaktan derle
+foonathan_memory_vendor'u indir ve kaynaktan derle.
 ```bash
 git clone https://github.com/eProsima/foonathan_memory_vendor.git
 cd foonathan_memory_vendor
@@ -9,7 +9,7 @@ mkdir build && cd build
 cmake ..
 cmake --build . --target install
 ```
-fastdds'i indir ve derle
+fastdds'i indir ve derle.
 ```bash
 #fastDDS sürümü 2.0.0 olmalı                                                                                                  +++++++++
 git clone --recursive https://github.com/eProsima/Fast-DDS.git ~/FastDDS-2.0.0
@@ -23,7 +23,7 @@ sudo make install
 # **Proje için ROS2 Workspace hazırlanması**
 ## ROS2 kurulumu
 ### fastdds kurulumu
-foonathan_memory_vendor'u indir ve kaynaktan derle
+foonathan_memory_vendor'u indir ve kaynaktan derle.
 ```bash
 git clone https://github.com/eProsima/foonathan_memory_vendor.git
 cd foonathan_memory_vendor
@@ -31,7 +31,7 @@ mkdir build && cd build
 cmake ..
 cmake --build . --target install
 ```
-fastdds'i indir ve derle
+fastdds'i indir ve derle.
 ```bash
 #fastDDS sürümü 2.0.0 olmalı                                                                                                  +++++++++
 git clone --recursive https://github.com/eProsima/Fast-DDS.git ~/FastDDS-2.0.0
@@ -73,13 +73,13 @@ colcon build --symlink-install
     -gencode arch=compute_87,code=[sm_87,compute_87]
 ```
 satırlarını
-   `-gencode arch=compute_53,code=[sm_53,compute_53]` ile değiştir
+   `-gencode arch=compute_53,code=[sm_53,compute_53]` ile değiştir.
    
     `apt-get install ros-foxy-v4l2-camera`
-ile v4l2 ros driverını kur
+ile v4l2 ros driverını kur.
 
 ### kendi datasetimizi kullanma
-`/home/jetson/kkts_ws/src/darknet_ros_yolov4/darknet_ros/darknet_ros/yolo_network_config` yolundaki weights ve cfg dosyalarını değiştir ve tüm workspace'deki data cart curt dosyalarını kendi isteğine göre ayarla
+`/home/jetson/kkts_ws/src/darknet_ros_yolov4/darknet_ros/darknet_ros/yolo_network_config` yolundaki weights ve cfg dosyalarını değiştir ve tüm workspace'deki data cart curt dosyalarını kendi isteğine göre ayarla.
 ## px4_ros_com paketini kendi workspace'imize uyarlama
 ```bash
 cd <workspace yolu>/src
@@ -87,3 +87,7 @@ git clone https://github.com/PX4/px4_ros_com.git
 git clone https://github.com/PX4/px4_msgs.git
 source ~/kkts_ws/src/px4_ros_com/scripts/build_ros2_workspace.bash
 ```
+### setpoint kodunun eklenmesi
+[setpoint.cpp](https://github.com/DALLI-KAKTUS/PAPALAGI/blob/main/Software/setpoint.cpp "setpoint kodu") dosyasını indirip `/home/jetson/kkts_ws/src/px4_ros_com/src/examples/offboard` klasörüne at. ardından `/home/jetson/kkts_ws/src/px4_ros_com/CMakeLists.txt` dosyasındaki ` custom_executable(examples/offboard offboard_control)`  satırının altına ` custom_executable(examples/offboard setpoint)`  satırını ekle
+### launch dosyasını uyarlama
+`/home/jetson/kkts_ws/src/darknet_ros_yolov4/darknet_ros/darknet_ros/launch/darknet_ros.launch.py` dosyasındaki
