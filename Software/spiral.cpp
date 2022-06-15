@@ -20,11 +20,11 @@ float angle = 0.0f;
  
  
 // Space between the spirals
-  int a = 2, b = 2;
+  int a = 2, b = 2 l=50;
   
-  vector<vector<float>> vec( 50 , vector<float> (3));
+  vector<vector<float>> vec( l , vector<float> (3));
  
-for (int i = 0; i < 50; i++) {
+for (int i = 0; i < l; i++) {
  
 angle = 0.20 * i;
      
@@ -43,7 +43,7 @@ y = (a + b * angle) * sin (angle);
  
 };
 
-for(int i = 0; i < 50; i++)
+for(int i = 0; i < l; i++)
     {
         cout << '{';
         for(int j = 0; j < 3 ;j++)
