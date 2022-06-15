@@ -85,4 +85,5 @@ ile v4l2 ros driverını kur
 cd <workspace yolu>/src
 git clone https://github.com/PX4/px4_ros_com.git 
 git clone https://github.com/PX4/px4_msgs.git
+source ~/kkts_ws/src/px4_ros_com/scripts/build_ros2_workspace.bash
 ```
